@@ -31,6 +31,7 @@ after_script:
 - command -v dart2js
 - find . -name js_runtime
 - find /home/travis/dart-sdk -name js_runtime
+- ls --color /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles
 - node print_arguments.js Lot of arguments here!
 # - node http_server.js 8001 &
 # - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat -T10 - TCP4:localhost:8001,forever >/dev/null # Waiting for server to connect.
