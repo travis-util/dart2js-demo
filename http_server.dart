@@ -13,7 +13,7 @@ Future main(List<String> arguments) async {
     exit(1); // Exists all threads! TODO
   }
   print(arguments);
-  print(int.parse(arguments[1]));
+  print(int.parse(arguments[0]));
   final requests = await HttpServer.bind('localhost', 8888);
   await for (var request in requests) {
     processRequest(request);
