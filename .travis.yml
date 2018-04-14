@@ -40,6 +40,6 @@ after_script:
 
 - printenv TERM
 
-- echo dart2js produces hard to read js:
+- echo dart2js produces hard to read js!
 - cat hello.js
 # - pygmentize -P style=vim -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump # Best for js
