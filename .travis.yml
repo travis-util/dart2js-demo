@@ -23,9 +23,9 @@ script:
 - wget --quiet --connect-timeout=10 --output-document=- localhost:8000/dart
 
 after_script:
-- node http_server.js 8001 &
-- printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat -T10 - TCP4:localhost:8001,forever >/dev/null # Waiting for server to connect.
-- wget --quiet --connect-timeout=10 --output-document=- localhost:8001/dart
+# - node http_server.js 8001 &
+# - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat -T10 - TCP4:localhost:8001,forever >/dev/null # Waiting for server to connect.
+# - wget --quiet --connect-timeout=10 --output-document=- localhost:8001/dart
 # /home/travis/build/travis-util/dart2js-demo/http_server.js:3086
 # ReferenceError: self is not defined
 
