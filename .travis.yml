@@ -50,9 +50,10 @@ after_script:
 - cat /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/jsshell.js
 - node print_arguments.d8js Lot of arguments here!
 - node print_arguments.jsshell Lot of arguments here!
+
 - node http_server.d8js &
-- echo $? ; sleep 2
 # - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat -T10 - TCP4:localhost:8888,forever >/dev/null # Waiting for server to connect.
+- echo $? ; sleep 2
 # /home/travis/build/travis-util/dart2js-demo/http_server.d8js:263
 # Unsupported operation: ServerSocket.bind
 - wget --quiet --connect-timeout=10 --output-document=- localhost:8888/dart ; echo $?
