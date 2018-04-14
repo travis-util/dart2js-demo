@@ -7,14 +7,14 @@ Future main(List<String> arguments) async {
   // final parser = new ArgParser();
   // argResults = parser.parse(arguments);
   // List<String> args = argResults.rest;
-  print(arguments.length);
-  if (2 < arguments.length) {
-    print('Usage: <commande file name> [<port number>]');
+  # print(arguments.length);
+  if (1 != arguments.length) {
+    print('Usage: <commande file name> <port number>');
     exit(1); // Exists all threads! TODO
   }
-  print(arguments);
-  print(int.parse(arguments[0]));
-  final requests = await HttpServer.bind('localhost', 8888);
+  # print(arguments);
+  # print(int.parse(arguments[0]));
+  final requests = await HttpServer.bind('localhost', int.parse(arguments[0]));
   await for (var request in requests) {
     processRequest(request);
   }
