@@ -9,10 +9,10 @@ Future main(List<String> arguments) async {
   if (1 == arguments.length) {
     // print('Starting server on http://localhost:');
     // print(int.parse(arguments[0]));
-    stderr.writeln('Starting server on http://localhost:${int.parse(arguments[0])}');
+    stdout.writeln('Starting server on http://localhost:${int.parse(arguments[0])}');
   }
   if (0 == arguments.length) {
-    // print('Starting server on http://localhost:8888...');
+    stdout.writeln('Starting server on http://localhost:8888...');
   }
   final requests = await HttpServer.bind('localhost', (0 == arguments.length) ? 8888 : int.parse(arguments[0]));
   await for (var request in requests) {
