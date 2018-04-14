@@ -13,3 +13,6 @@ script:
 after_script:
 - dart2js --verbose --help --enable-diagnostic-colors
 - pygmentize point.js
+- pygmentize -O full point.js
+- pygmentize -P style=friendly point.js
+- pygmentize -P style=friendly -O full point.js
