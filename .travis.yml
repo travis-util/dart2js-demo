@@ -26,25 +26,33 @@ after_script:
 
 - printenv TERM
 
+- echo Short list
+- pygmentize -P style=vim -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump
+- pygmentize -P style=native -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump
+- pygmentize -P style=fruity -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump
+- pygmentize -P style=manni -f 256 hello.js
+- pygmentize -P style=perldoc -f 16m hello.js
+- pygmentize -P style=rainbow_dash -f 256 hello.js
+
+- echo Comprenhensive list
+- pygmentize -P linenos=1 -P bg=dark hello.js
+- pygmentize -P linenos=1 hello.js
+- pygmentize -P linenos=1 -f html -O full hello.js | elinks -force-html -dump-color-mode 0 -dump
+- pygmentize -P linenos=1 -f html -O full hello.js | elinks -force-html -dump-color-mode 1 -dump
+- pygmentize -P linenos=1 -f html -O full hello.js | elinks -force-html -dump-color-mode 2 -dump
+- pygmentize -P linenos=1 -f html -O full hello.js | elinks -force-html -dump-color-mode 3 -dump
+- pygmentize -P linenos=1 -f html -O full hello.js | elinks -force-html -dump-color-mode 4 -dump
+
 - pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
-- pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 16 -dump
-- pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 88 -dump
-- pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 256 -dump
+- env TERM=xterm-color pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
+- env TERM=xterm-88color pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
+- env TERM=xterm-256color pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
 
-- env TERM=xterm-color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump
+- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
 - env TERM=xterm-color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
-
-- env TERM=xterm-88color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump
 - env TERM=xterm-88color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
-
-- env TERM=xterm-256color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump
 - env TERM=xterm-256color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
 
-- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump
-- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
-- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 16 -dump
-- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 88 -dump
-- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 256 -dump
 
 - pygmentize point.js
 - pygmentize -O full point.js
