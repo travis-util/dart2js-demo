@@ -24,6 +24,8 @@ script:
 after_script:
 - dart2js --verbose --help --enable-diagnostic-colors
 
+- printenv TERM
+
 - pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
 - pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
 
