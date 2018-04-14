@@ -28,10 +28,10 @@ after_script:
 
 - echo Short list
 - pygmentize -P style=vim -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump
-- pygmentize -P style=native -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump
-- pygmentize -P style=fruity -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump
-- pygmentize -P style=manni -f 256 hello.js
-- pygmentize -P style=perldoc -f 16m hello.js
+# - pygmentize -P style=native -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump
+# - pygmentize -P style=fruity -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump
+# - pygmentize -P style=manni -f 256 hello.js
+# - pygmentize -P style=perldoc -f 16m hello.js
 - pygmentize -P style=rainbow_dash -f 256 hello.js
 
 - echo Comprenhensive list
