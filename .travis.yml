@@ -17,8 +17,11 @@ script:
 - dart2js --checked --enable-diagnostic-colors --out=point.js point.dart
 - node point.js
 
+- dart2js --checked --enable-diagnostic-colors --out=print_arguments.dart2js print_arguments.dart
 - cp /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/d8.js print_arguments.js
-- dart2js --checked --enable-diagnostic-colors --out=- print_arguments.dart >> print_arguments.js
+- du -sch print_arguments.js
+- cat print_arguments.dart2js >> print_arguments.js
+- du -sch print_arguments.js
 - dart print_arguments.dart Lot of arguments here!
 
 - dart2js --checked --enable-diagnostic-colors --out=http_server.js http_server.dart
