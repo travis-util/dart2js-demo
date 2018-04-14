@@ -1,6 +1,6 @@
 language: dart
 dart:
-- 2.0
+- "2.0"
 - stable
 - dev
 
@@ -29,11 +29,6 @@ after_script:
 
 - echo Short list
 - pygmentize -P style=vim -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump # Best for js
-- pygmentize -P style=vim -f html -O full -P linenos=1 hello.js | env TERM=xterm-color elinks -force-html -dump-color-mode 1 -dump # Best for js
-- pygmentize -P style=vim -f html -O full -P linenos=1 hello.js | env TERM=xterm-88color elinks -force-html -dump-color-mode 1 -dump # Best for js
-- pygmentize -P style=vim -f html -O full -P linenos=1 hello.js | env TERM=xterm-256color elinks -force-html -dump-color-mode 1 -dump # Best for js
-
-- pygmentize -f 256 -P style=vim -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump # Best for js
 - pygmentize -f 256 -P style=vim -f html -O full -P linenos=1 hello.js | env TERM=xterm-color elinks -force-html -dump-color-mode 1 -dump # Best for js
 - pygmentize -f 256 -P style=vim -f html -O full -P linenos=1 hello.js | env TERM=xterm-88color elinks -force-html -dump-color-mode 1 -dump # Best for js
 - pygmentize -f 256 -P style=vim -f html -O full -P linenos=1 hello.js | env TERM=xterm-256color elinks -force-html -dump-color-mode 1 -dump # Best for js
