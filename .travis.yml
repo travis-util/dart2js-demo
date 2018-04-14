@@ -3,6 +3,11 @@ dart:
 - stable
 - dev
 
+addons:
+  apt:
+    packages:
+    - elinks # Needs pygmentize -f html -O full
+
 install:
 - pip install --user pygments
 
@@ -12,6 +17,9 @@ script:
 
 after_script:
 - dart2js --verbose --help --enable-diagnostic-colors
+
+- pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
+- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
 
 - pygmentize point.js
 - pygmentize -O full point.js
