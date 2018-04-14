@@ -11,7 +11,8 @@ Future main(List<String> arguments) async {
     print('Usage: <commande file name> <port number>');
     exit;
   }
-  print(args[1]);
+  print(args);
+  print(int.parse(args[1]));
   final requests = await HttpServer.bind('localhost', 8888);
   await for (var request in requests) {
     processRequest(request);
