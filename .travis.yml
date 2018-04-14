@@ -4,8 +4,8 @@ dart:
 - dev
 
 script:
-- dart2js --checked --out=point.js point
+- dart2js --checked --enable-diagnostic-colors --out=point.js point.dart
 - cat point.js
 
 after_script:
-- dart2js -vh
+- dart2js --verbose --help --enable-diagnostic-colors
