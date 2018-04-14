@@ -26,7 +26,7 @@ script:
 - du -sch print_arguments.d8js print_arguments.jsshell
 - dart print_arguments.dart Lot of arguments here!
 
-- dart2js --checked --enable-diagnostic-colors --out=http_server.js http_server.dart
+- dart2js --checked --enable-diagnostic-colors --out=http_server.dart2js http_server.dart
 - cp /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/d8.js http_server.d8js
 - cp /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/jsshell.js http_server.jsshell
 - du -sch http_server.d8js http_server.jsshell http_server.dart2js
