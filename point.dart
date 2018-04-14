@@ -35,3 +35,5 @@ void main() {
   var distance = p1.distanceTo(p2);
   print(distance);
 }
+
+// From https://en.wikipedia.org/wiki/Dart_(programming_language)#Example
