@@ -9,7 +9,7 @@ Future main(List<String> arguments) async {
   if (1 == arguments.length) {
     // print('Starting server on http://localhost:');
     // print(int.parse(arguments[0]));
-    stdout.writeln('Starting server on http://localhost:${int.parse(arguments[0])}');
+    stdout.writeln('Starting server on http://localhost:${int.parse(arguments[0])}...');
   }
   if (0 == arguments.length) {
     stdout.writeln('Starting server on http://localhost:8888...');
