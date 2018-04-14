@@ -17,6 +17,9 @@ script:
 - dart2js --checked --enable-diagnostic-colors --out=point.js point.dart
 - node point.js
 
+- dart2js --checked --enable-diagnostic-colors --out=print_arguments.js print_arguments.dart
+- node print_arguments.js Lot of arguments here!
+
 - dart2js --checked --enable-diagnostic-colors --out=http_server.js http_server.dart
 - dart http_server.dart 8000 &
 - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat -T10 - TCP4:localhost:8000,forever >/dev/null # Waiting for server to connect.
