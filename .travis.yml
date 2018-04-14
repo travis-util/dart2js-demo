@@ -20,10 +20,10 @@ script:
 - dart2js --checked --enable-diagnostic-colors --out=http_server.js http_server.dart
 - dart http_server.dart 8000 &
 - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat - TCP4:localhost:8000,forever >/dev/null # Waiting for server to connect.
-- wget --quiet --output-document=- localhost:8888/dart
+- wget --quiet --output-document=- localhost:8000/dart
 
 after_script:
-# - node http_server.js 8001 &
+- node http_server.js 8001 &
 # - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat - TCP4:localhost:8001,forever >/dev/null # Waiting for server to connect.
 # /home/travis/build/travis-util/dart2js-demo/http_server.js:3086
 # ReferenceError: self is not defined
