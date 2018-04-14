@@ -16,3 +16,13 @@ after_script:
 - pygmentize -O full point.js
 - pygmentize -P style=friendly point.js
 - pygmentize -P style=friendly -O full point.js
+
+- pygmentize -f 256 point.js
+- pygmentize -f 256 -O full point.js
+- pygmentize -f 256 -P style=friendly point.js
+- pygmentize -f 256 -P style=friendly -O full point.js
+
+- pygmentize -f 256 point.js
+- pygmentize -f 256 -O full point.js
+- pygmentize -f 256 -P style=friendly point.js
+- pygmentize -f 256 -P style=friendly -O full point.js
