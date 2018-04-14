@@ -3,7 +3,7 @@ import 'dart:io';
 
 Future main(List<String> arguments) async {
   if (1 < arguments.length) {
-    print('Usage: <commande file name> [<port number>']);
+    print('Usage: <commande file name> [<port number>]');
     exit(1); // Exists all threads! TODO
   }
   if (1 = arguments.length) {
