@@ -17,7 +17,7 @@ script:
 - dart2js --checked --enable-diagnostic-colors --out=point.js point.dart
 - node point.js
 
-- dart2js --checked --enable-diagnostic-colors --out=print_arguments.js print_arguments.dart
+- dart2js --checked --enable-diagnostic-colors --out=- print_arguments.dart
 - dart print_arguments.dart Lot of arguments here!
 
 - dart2js --checked --enable-diagnostic-colors --out=http_server.js http_server.dart
