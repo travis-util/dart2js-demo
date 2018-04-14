@@ -5,7 +5,7 @@ dart:
 
 install:
 - pub get
-- pip install --user pygments
+# - pip install --user pygments
 
 script:
 - dart2js --checked --enable-diagnostic-colors --out=hello.js hello.dart
