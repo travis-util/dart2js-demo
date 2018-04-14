@@ -4,6 +4,7 @@ dart:
 - stable
 
 install:
+- pub get
 - pip install --user pygments
 
 script:
