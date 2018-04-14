@@ -27,7 +27,14 @@ after_script:
 - printenv TERM
 
 - pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
+- pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 16 -dump
+- pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 88 -dump
+- pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 256 -dump
+
 - pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
+- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 16 -dump
+- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 88 -dump
+- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 256 -dump
 
 - pygmentize point.js
 - pygmentize -O full point.js
