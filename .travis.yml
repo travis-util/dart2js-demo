@@ -18,10 +18,12 @@ script:
 - node point.js
 
 - dart2js --checked --enable-diagnostic-colors --out=print_arguments.dart2js print_arguments.dart
-- cp /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/d8.js print_arguments.js
-- du -sch print_arguments.js
-- cat print_arguments.dart2js >> print_arguments.js
-- du -sch print_arguments.js
+- cp /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/d8.js print_arguments.d8js
+- cp /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/jsshell.js print_arguments.jsshell
+- du -sch print_arguments.d8js print_arguments.jsshell print_arguments.dart2js
+- cat print_arguments.dart2js >> print_arguments.d8js
+- cat print_arguments.dart2js >> print_arguments.jsshell
+- du -sch print_arguments.d8js print_arguments.jsshell
 - dart print_arguments.dart Lot of arguments here!
 
 - dart2js --checked --enable-diagnostic-colors --out=http_server.js http_server.dart
@@ -30,6 +32,7 @@ script:
 - wget --quiet --connect-timeout=10 --output-document=- localhost:8000/dart
 
 after_script:
+- node --version
 - command -v pub
 - command -v dart
 - command -v dart2js
@@ -37,7 +40,8 @@ after_script:
 - find /home/travis/dart-sdk -name js_runtime
 - ls --color /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles
 - cat /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/README
-- node print_arguments.js Lot of arguments here!
+- node print_arguments.d8js Lot of arguments here!
+- node print_arguments.jsshell Lot of arguments here!
 # - node http_server.js 8001 &
 # - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat -T10 - TCP4:localhost:8001,forever >/dev/null # Waiting for server to connect.
 # - wget --quiet --connect-timeout=10 --output-document=- localhost:8001/dart
