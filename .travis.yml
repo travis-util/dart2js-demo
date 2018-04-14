@@ -4,4 +4,7 @@ dart:
 - dev
 
 script:
+- dart2js -c --output=point.js point
+
+after_script:
 - dart2js
