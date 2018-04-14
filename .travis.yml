@@ -54,7 +54,7 @@ after_script:
 # - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat -T10 - TCP4:localhost:8888,forever >/dev/null # Waiting for server to connect.
 # /home/travis/build/travis-util/dart2js-demo/http_server.d8js:263
 # Unsupported operation: ServerSocket.bind
-- wget --quiet --connect-timeout=10 --output-document=- localhost:8888/dart
+- wget --connect-timeout=10 --output-document=- localhost:8888/dart
 # /home/travis/build/travis-util/dart2js-demo/http_server.js:3086
 # ReferenceError: self is not defined
 
