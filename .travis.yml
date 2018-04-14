@@ -24,7 +24,7 @@ script:
 
 after_script:
 - node http_server.js 8001 &
-# - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat - TCP4:localhost:8001,forever >/dev/null # Waiting for server to connect.
+- printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat -T10 - TCP4:localhost:8001,forever >/dev/null # Waiting for server to connect.
 # /home/travis/build/travis-util/dart2js-demo/http_server.js:3086
 # ReferenceError: self is not defined
 
