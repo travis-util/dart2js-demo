@@ -17,10 +17,10 @@ script:
 - node point.js
 
 - dart2js --checked --enable-diagnostic-colors --out=http_server.js http_server.dart
-- dart http_server.dart &
+- node http_server.js &
+# - dart http_server.dart &
 - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat - TCP4:localhost:8888,forever >/dev/null # Waiting for server to connect.
 - wget --quiet --output-document=- localhost:8888/dart
-# node http_server.js & # Was not working. Why?
 
 after_script:
 - dart --verbose --help --enable-diagnostic-colors
