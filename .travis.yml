@@ -23,6 +23,8 @@ script:
 - wget --quiet --output-document=- localhost:8888/dart
 
 after_script:
+- pub deps
+- pub --verbose --help --enable-diagnostic-colors
 - dart --verbose --help --enable-diagnostic-colors
 - dart2js --verbose --help --enable-diagnostic-colors
 
