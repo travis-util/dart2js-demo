@@ -26,6 +26,9 @@ script:
 - wget --quiet --connect-timeout=10 --output-document=- localhost:8000/dart
 
 after_script:
+- command -v pub
+- command -v dart
+- command -v dart2js
 - find . -name js_runtime
 - node print_arguments.js Lot of arguments here!
 # - node http_server.js 8001 &
