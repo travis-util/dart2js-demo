@@ -7,11 +7,11 @@ Future main(List<String> arguments) async {
     exit(1); // Exists all threads! TODO
   }
   if (1 == arguments.length) {
-    print('Starting server on http://localhost:');
-    print(int.parse(arguments[0]));
+    // print('Starting server on http://localhost:');
+    // print(int.parse(arguments[0]));
   }
   if (0 == arguments.length) {
-    print('Starting server on http://localhost:8888...');
+    // print('Starting server on http://localhost:8888...');
   }
   final requests = await HttpServer.bind('localhost', (0 == arguments.length) ? 8888 : int.parse(arguments[0]));
   await for (var request in requests) {
