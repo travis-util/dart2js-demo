@@ -3,9 +3,13 @@ dart:
 - stable
 - dev
 
+install:
+- pip install --user pygments
+
 script:
 - dart2js --checked --enable-diagnostic-colors --out=point.js point.dart
-- cat point.js
+- node point.js
 
 after_script:
 - dart2js --verbose --help --enable-diagnostic-colors
+- pygmentize point.js
