@@ -1,6 +1,6 @@
 language: dart
 dart:
-- 2
+- 2.0
 - stable
 - dev
 
@@ -30,9 +30,6 @@ after_script:
 - echo Short list
 - pygmentize -P style=vim -f html -O full -P linenos=1 hello.js | elinks -force-html -dump-color-mode 1 -dump # Best for js
 - pygmentize -P linenos=1 -P bg=dark hello.js
-- pygmentize -P linenos=1 hello.js
-- pygmentize -P linenos=1 -f html -O full hello.js | elinks -force-html -dump-color-mode 0 -dump
-- pygmentize -P linenos=1 -f html -O full hello.js | elinks -force-html -dump-color-mode 1 -dump
 - pygmentize -P linenos=1 -f html -O full hello.js | elinks -force-html -dump-color-mode 2 -dump
 - pygmentize -P linenos=1 -f html -O full hello.js | elinks -force-html -dump-color-mode 3 -dump
 - pygmentize -P linenos=1 -f html -O full hello.js | elinks -force-html -dump-color-mode 4 -dump
