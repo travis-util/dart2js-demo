@@ -1,0 +1,7 @@
+language: dart
+dart:
+- stable
+- dev
+
+script:
+- dart2js
