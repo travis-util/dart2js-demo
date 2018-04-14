@@ -7,9 +7,10 @@ Future main(List<String> arguments) async {
   // final parser = new ArgParser();
   // argResults = parser.parse(arguments);
   // List<String> args = argResults.rest;
+  print(arguments.length);
   if (2 < arguments.length) {
     print('Usage: <commande file name> [<port number>]');
-    exit(1);
+    exit(1); // Exists all threads! TODO
   }
   print(arguments);
   print(int.parse(arguments[1]));
