@@ -40,6 +40,8 @@ after_script:
 - find /home/travis/dart-sdk -name js_runtime
 - ls --color /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles
 - cat /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/README
+- cat /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/d8.js
+- cat /home/travis/dart-sdk/lib/_internal/js_runtime/lib/preambles/jsshell.js
 - node print_arguments.d8js Lot of arguments here!
 - node print_arguments.jsshell Lot of arguments here!
 # - node http_server.js 8001 &
