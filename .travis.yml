@@ -12,6 +12,12 @@ install:
 - pip install --user pygments
 
 script:
+- dart2js --checked --enable-diagnostic-colors --out=point.js hello.dart
+- node hello.js
+
+- dart2js --checked --enable-diagnostic-colors --out=point.js fibonacci.dart
+- node fibonacci.js
+
 - dart2js --checked --enable-diagnostic-colors --out=point.js point.dart
 - node point.js
 
