@@ -6,10 +6,10 @@ Future main(List<String> arguments) async {
     print('Usage: <commande file name> [<port number>]');
     exit(1); // Exists all threads! TODO
   }
-  if (1 = arguments.length) {
+  if (1 == arguments.length) {
     final requests = await HttpServer.bind('localhost', int.parse(arguments[0]));
   }
-  if (0 = arguments.length) {
+  if (0 == arguments.length) {
     final requests = await HttpServer.bind('localhost', 8888);
   } // TODO use a variable for port!
   await for (var request in requests) {
