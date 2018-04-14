@@ -26,6 +26,7 @@ script:
 - wget --quiet --connect-timeout=10 --output-document=- localhost:8000/dart
 
 after_script:
+- find . -name js_runtime
 - node print_arguments.js Lot of arguments here!
 # - node http_server.js 8001 &
 # - printf 'HEAD /dart HTTP/1.1\r\n\r\n' | socat -T10 - TCP4:localhost:8001,forever >/dev/null # Waiting for server to connect.
