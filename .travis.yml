@@ -12,10 +12,10 @@ install:
 - pip install --user pygments
 
 script:
-- dart2js --checked --enable-diagnostic-colors --out=point.js hello.dart
+- dart2js --checked --enable-diagnostic-colors --out=hello.js hello.dart
 - node hello.js
 
-- dart2js --checked --enable-diagnostic-colors --out=point.js fibonacci.dart
+- dart2js --checked --enable-diagnostic-colors --out=fibonacci.js fibonacci.dart
 - node fibonacci.js
 
 - dart2js --checked --enable-diagnostic-colors --out=point.js point.dart
@@ -31,6 +31,16 @@ after_script:
 - pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 88 -dump
 - pygmentize -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 256 -dump
 
+- env TERM=xterm-color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump
+- env TERM=xterm-color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
+
+- env TERM=xterm-88color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump
+- env TERM=xterm-88color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
+
+- env TERM=xterm-256color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump
+- env TERM=xterm-256color pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
+
+- pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump
 - pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 1 -dump
 - pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 16 -dump
 - pygmentize -P style=friendly -f html -O full -P linenos=1 point.js  | elinks -force-html -dump-color-mode 88 -dump
